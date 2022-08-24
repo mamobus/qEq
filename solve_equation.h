@@ -1,4 +1,4 @@
-int solve_equation(double a, double b, double c, double* x1, double* x2);
+int solve_equation(input_var_t input_var, answer_var_t answer_var);
 
 struct input_var_t
 {

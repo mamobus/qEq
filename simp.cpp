@@ -10,13 +10,9 @@ int main()
     input_var_t input_var = {};
     answer_var_t answer_var = {};
 
-    input_try(&input_var);
-
-    printf("based\n");
-
-    input_try(&a, &b, &c);
+    input_try(input_var);
     
-    type = solve_equation(a, b, c, &x1, &x2);
+    answer_var.type = solve_equation(a, b, c, &x1, &x2);
     
     print_result ( x1, x2, type );
 
