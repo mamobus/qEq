@@ -1,23 +1,11 @@
+#ifndef COMPARE_FUNCTIONS_H
+#define COMPARE_FUNCTIONS_H
+
 #include <math.h>
 
- 
-double mindiff = 0.00000001;
+const double mindiff = 1e-8;
 
-bool are_equal(double number_a, double number_b) {
-    if (fabs(number_a - number_b) < mindiff) {
-        return true;
-    }
-    else {
-        return false;
-    }
+bool are_equal(double number_a, double number_b);
+bool is_zero(double number);
 
-}
-
-bool is_zero(double number_a) {
-    if (fabs(number_a) < mindiff) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
+#endif // COMPARE_FUNCTIONS_H

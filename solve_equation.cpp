@@ -10,6 +10,15 @@ void solve_equation(const input_var_t* input_var, answer_var_t* answer_var)
     {
         solve_linear(input_var, answer_var); 
     }
+
+    // discriminant = ...
+
+    /*
+    if (isZero(d)) {
+        
+    }
+    */
+
     else if (is_zero(input_var->b)) 
     {
         if ( (-input_var->c / input_var->a) > 0) 

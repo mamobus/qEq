@@ -3,6 +3,12 @@
 #include <assert.h>
 #include "solve_equation.h"
 
+/**
+ * @brief Input function
+ * tries to read 3 coefficients from console untill succes
+ * 
+ * @param input_var 
+ */
 void input_try(input_var_t* input_var) 
 {    
     int success_input = 0;
@@ -15,7 +21,7 @@ void input_try(input_var_t* input_var)
         {
             printf("invalid format. try again\n");
         }      
-        fflush(stdin);
+        fflush(stdin); // getchar
     } 
 }
 
@@ -23,17 +29,24 @@ void print_result(answer_var_t* answer_var)
 {
     switch (answer_var->type)
     {
-    case 0:
-        printf("%s", "No solution"); 
-        break;
-    case 1:
-        printf("%s %lf", "Solution:", answer_var->x1);
-        break;
-    case 2:
-        printf("%s %lf %lf", "Solutions:", answer_var->x1, answer_var->x2);
-        break;
-    default:
-        printf("%s", "Solution is any number");  
+        case 0:
+            printf("No solution\n"); 
+            break;
+
+        case 1:
+            printf("Solution: %lf\n", answer_var->x1);
+            break;
+
+        case 2:
+            printf("%s %lf %lf", "Solutions:\n", answer_var->x1, answer_var->x2); //fix printf
+            break;
+
+        case 3:
+            printf("Solution is any number\n");
+            break;
+
+        default:
+            printf("error in type. Current type: %d\n", answer_var->type);  
 
     }
 }
@@ -41,3 +54,9 @@ void print_result(answer_var_t* answer_var)
 //    assert(input_var.a != NULL);
 //   assert(input_var.b != NULL);
 //   assert(input_var.c != NULL);
+
+//засунуть type in enum 
+//переименовать в нормальное
+//очистка ввода через стирание строки посимвольно getchar
+//документация 
+//вернуть simple_funcs в solve_eq 

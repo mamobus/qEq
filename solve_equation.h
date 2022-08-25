@@ -2,6 +2,7 @@
 #define SOLVE_EQUATION_H
 
 #include <math.h>
+
 struct input_var_t
 {
     double a = NAN, b = NAN, c = NAN;
