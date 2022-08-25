@@ -1,36 +1,33 @@
 #include "compare_functions.h"
-#include "solve_linear.h"
-#include "solve_quad.h"
 #include "solve_equation.h"
+#include "simple_solve_functions.cpp"
 
-int solve_equation(double a, double b, double c, double* x1, double* x2) {
-    double d = ((b*b) - (4*a*c)); 
-    
-    if (is_zero(a)) {
-        if (is_zero(b)) {
-            if (is_zero(c))
-            return 0;
-        }
-        else {
-            solve_linear(b, c, x1);
-            return 1;
-        }
+void solve_equation(const input_var_t* input_var, answer_var_t* answer_var) 
+{
+    double discriminant = ((input_var->b * input_var->b) - (4 * input_var->a * input_var->c)); 
+    answer_var->type = 0;
+    if (is_zero(input_var->a)) 
+    {
+        solve_linear(input_var, answer_var); 
     }
-    else if (is_zero(b)) {
-        if ( (-c / a) > 0 ) {
-            solve_not_full_quad(a, c, x1, x2);
-            return 2;
+    else if (is_zero(input_var->b)) 
+    {
+        if ( (-input_var->c / input_var->a) > 0) 
+        {
+            solve_incomplete_quad(input_var, answer_var);
+            answer_var->type = 2;
         }
 
     }
-    else if (is_zero(c)) {
-        *x1 = 0;
-        *x2 = -b / a; 
-        return 2;
+    else if (is_zero(input_var->c)) 
+    {
+        answer_var->x1 = 0;
+        answer_var->x2 = -input_var->b / input_var->a; 
+        answer_var->type = 2;
     }
-    else if (d >= 0) {
-        solve_full_quad(a, b, c, x1, x2);
-        return 2;
+    else if (discriminant >= 0) 
+    {
+        solve_complete_quad(input_var, answer_var);
+        answer_var->type = 2;
     }
-return 3;
 }                                                                                               
