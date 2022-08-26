@@ -7,38 +7,38 @@
  * @brief Input function
  * tries to read 3 coefficients from console untill succes
  * 
- * @param input_var 
+ * @param equation 
  */
-void input_try(input_var_t* input_var) 
+void input_try(equation_t* equation) 
 {    
     int success_input = 0;
     
     while (success_input != 3)
     {
-        success_input = scanf("%lf %lf %lf", &input_var->a, &input_var->b, &input_var->c);
+        success_input = scanf("%lf %lf %lf", &equation->a, &equation->b, &equation->c);
         
         if (success_input != 3) 
         {
             printf("invalid format. try again\n");
-        }      
-        fflush(stdin); // getchar
+            scanf("%*s");
+        }     
     } 
 }
 
-void print_result(answer_var_t* answer_var) 
+void print_result(solution_t* solution) 
 {
-    switch (answer_var->type)
+    switch (solution->type)
     {
         case 0:
             printf("No solution\n"); 
             break;
 
         case 1:
-            printf("Solution: %lf\n", answer_var->x1);
+            printf("Solution: %lf\n", solution->x1);
             break;
 
         case 2:
-            printf("%s %lf %lf", "Solutions:\n", answer_var->x1, answer_var->x2); //fix printf
+            printf("%s %lf %lf", "Solutions:\n", solution->x1, solution->x2); //fix printf
             break;
 
         case 3:
@@ -46,17 +46,12 @@ void print_result(answer_var_t* answer_var)
             break;
 
         default:
-            printf("error in type. Current type: %d\n", answer_var->type);  
+            printf("error in type. Current type: %d\n", solution->type);  
 
     }
 }
 // {} case io_func base value .cpp__> .h
-//    assert(input_var.a != NULL);
-//   assert(input_var.b != NULL);
-//   assert(input_var.c != NULL);
+//    assert(equation.a != NULL);
+//   assert(equation.b != NULL);
+//   assert(equation.c != NULL);
 
-//засунуть type in enum 
-//переименовать в нормальное
-//очистка ввода через стирание строки посимвольно getchar
-//документация 
-//вернуть simple_funcs в solve_eq 

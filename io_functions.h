@@ -2,7 +2,7 @@
 #define IO_FUNCTIONS_H
 #include "solve_equation.h"
 
-void input_try(input_var_t* input_var);
-void print_result(answer_var_t* answer_var); 
+void input_try(equation_t* equation);
+void print_result(solution_t* solution); 
 
 #endif //IO_FUNCTIONS_H
