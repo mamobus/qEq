@@ -3,12 +3,6 @@
 #include "io_functions.h"
 #include <stdio.h>
 
-/**
- * @brief Main function
- * @details just main
- * @return 0 if successssss
- * @file
- */
 int main() 
 {
     equation_t equation = {};
@@ -22,4 +16,3 @@ int main()
     return 0; // должен быть СТРОГО!!!
 }
 //документация 
-//nullptr

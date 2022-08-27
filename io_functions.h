@@ -3,17 +3,20 @@
 #include "solve_equation.h"
 
 /**
- * @brief Takes coefficients from console
- * function that takes your a, b, c coefficients directly from the console. Tries again till sucessfull 
+ * @brief Input function
  * 
- * @param equation 
+ * Tries to read 3 coefficients from console untill succes
+ * 
+ * @param equation Structure, that includes that coefficients
  */
 void input_equation_coefficients(equation_t* equation);
 
 /**
  * @brief Prints solution
  * 
- * @param solution TEST THE PARAM
+ * Prints all the roots and their count
+ * 
+ * @param solution Structure structure, includes roots and their count 
  */
 void print_solution(solution_t* solution); 
 

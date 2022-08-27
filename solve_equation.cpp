@@ -1,10 +1,12 @@
 #include "compare_functions.h"
 #include "solve_equation.h"
-
+#include "assert.h"
 
 void solve_linear_equation(const equation_t* equation, solution_t* solution) 
 {
-    // a != 0
+    assert(equation != nullptr);
+    assert(solution != nullptr); 
+    assert(equation->a != 0);
     if (is_zero(equation->b)) 
 {
     if (equation->c == 0) solution->num_of_roots = infinity_roots;
@@ -19,7 +21,8 @@ else
 
 void solve_quadratic_equation(const equation_t* equation, solution_t* solution) 
 {
-    //жопа
+    assert(equation != nullptr);
+    assert(solution != nullptr);
     if (is_zero(equation->a))
     {    
         solve_linear_equation(equation, solution);
