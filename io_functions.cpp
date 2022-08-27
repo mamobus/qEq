@@ -22,39 +22,6 @@ void input_equation_coefficients(equation_t* equation)
         success_input = scanf("%lf %lf %lf", &equation->a, &equation->b, &equation->c);    
         if ((getchar() == 'q') && (getchar() == '\n')) exit(0);
     } 
-    
-    // while (success_input != 1)
-    // {
-    //     success_input = 0;
-    //     success_input = scanf("%lf", &equation->a);
-    //     if (success_input != 1) 
-    //     {
-    //         printf("invalid format. try again\n");
-    //         scanf("%*s");
-    //     }     
-    // } 
-    // success_input = 0;
-    // while (success_input != 1)
-    // {
-    //     success_input = 0;
-    //     success_input = scanf("%lf", &equation->b);
-    //     if (success_input != 1) 
-    //     {
-    //         printf("invalid format. try again\n");
-    //         scanf("%*s");
-    //     }     
-    // } 
-    // success_input = 0;
-    // while (success_input != 1)
-    // {
-    //     success_input = 0;
-    //     success_input = scanf("%lf", &equation->c);
-    //     if (success_input != 1) 
-    //     {
-    //         printf("invalid format. try again\n");
-    //         scanf("%*s");
-    //     }     
-    // }
 } 
 
 void print_solution(solution_t* solution) 
@@ -80,7 +47,6 @@ void print_solution(solution_t* solution)
 
         default:
             printf("error in number of roots. Current number of roots: %d\n", solution->num_of_roots);
-
     }
 }
 
