@@ -10,9 +10,9 @@ void input_equation_coefficients(equation_t* equation)
     int success_input = 0;
     
     printf("Enter equation coefficients in the next order: a, b, c. 'q' for exit\n");
-    if ((getchar() == 'q') && (getchar() == '\n')) exit(0);
 
     success_input = scanf("%lf %lf %lf", &equation->a, &equation->b, &equation->c); 
+    if ((getchar() == 'q') && (getchar() == '\n')) exit(0);
 
     while (success_input != 3)
     {
