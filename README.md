@@ -1,2 +1,2 @@
-# qEq
-решение квадратного уравнения в серьёзном оформлении 
+# Quadratic equation solution program
+just properly designed quadratic equatons solution

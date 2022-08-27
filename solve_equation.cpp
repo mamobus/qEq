@@ -6,7 +6,7 @@ void solve_linear_equation(const equation_t* equation, solution_t* solution)
 {
     assert(equation != nullptr);
     assert(solution != nullptr); 
-    assert(equation->a != 0);
+    assert(equation->a == 0);
     if (is_zero(equation->b)) 
 {
     if (equation->c == 0) solution->num_of_roots = infinity_roots;

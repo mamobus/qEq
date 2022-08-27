@@ -2,23 +2,60 @@
 #include "io_functions.h"
 #include <assert.h>
 #include "solve_equation.h"
+#include <stdlib.h>
 
 void input_equation_coefficients(equation_t* equation) 
 {    
     assert(equation != nullptr);
     int success_input = 0;
     
+    printf("Enter equation coefficients in the next order: a, b, c. 'q' for exit\n");
+    if ((getchar() == 'q') && (getchar() == '\n')) exit(0);
+
+    success_input = scanf("%lf %lf %lf", &equation->a, &equation->b, &equation->c); 
+
     while (success_input != 3)
     {
-        success_input = scanf("%lf %lf %lf", &equation->a, &equation->b, &equation->c);
-        
-        if (success_input != 3) 
-        {
-            printf("invalid format. try again\n");
-            scanf("%*s");
-        }     
+        char ch = 0;
+        printf("invalid format. try again\n");
+        while (getchar() != '\n'); 
+        success_input = scanf("%lf %lf %lf", &equation->a, &equation->b, &equation->c);    
+        if ((getchar() == 'q') && (getchar() == '\n')) exit(0);
     } 
-}
+    
+    // while (success_input != 1)
+    // {
+    //     success_input = 0;
+    //     success_input = scanf("%lf", &equation->a);
+    //     if (success_input != 1) 
+    //     {
+    //         printf("invalid format. try again\n");
+    //         scanf("%*s");
+    //     }     
+    // } 
+    // success_input = 0;
+    // while (success_input != 1)
+    // {
+    //     success_input = 0;
+    //     success_input = scanf("%lf", &equation->b);
+    //     if (success_input != 1) 
+    //     {
+    //         printf("invalid format. try again\n");
+    //         scanf("%*s");
+    //     }     
+    // } 
+    // success_input = 0;
+    // while (success_input != 1)
+    // {
+    //     success_input = 0;
+    //     success_input = scanf("%lf", &equation->c);
+    //     if (success_input != 1) 
+    //     {
+    //         printf("invalid format. try again\n");
+    //         scanf("%*s");
+    //     }     
+    // }
+} 
 
 void print_solution(solution_t* solution) 
 {
