@@ -56,7 +56,7 @@ int main()
         else 
         {
             printf("\x1b[31mTest %d failed\n", i + 1);
-            printf("Equation: a = %lf, b = %lf, c = %lf; %lf*x^2 + %lf*x + %lf = 0\n", tests[i].equation.a, tests[i].equation.b, tests[i].equation.c, tests[i].equation.a, tests[i].equation.b, tests[i].equation.c);
+            printf("Equation: a = %lf, b = %lf, c = %lf\n", tests[i].equation.a, tests[i].equation.b, tests[i].equation.c);
             printf("Expected roots: ");
             switch (tests[i].solution_want.num_of_roots)
             {
