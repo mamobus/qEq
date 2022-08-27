@@ -4,13 +4,15 @@
 #include "solve_equation.h"
 
 /**
+ * @file
  * @brief Input function
- * tries to read 3 coefficients from console untill succes
+ * Tries to read 3 coefficients from console untill succes
  * 
- * @param equation 
+ * @param equation Structure, that consists of that coefficints
  */
-void input_try(equation_t* equation) 
+void input_equation_coefficients(equation_t* equation) 
 {    
+    // ass
     int success_input = 0;
     
     while (success_input != 3)
@@ -25,28 +27,29 @@ void input_try(equation_t* equation)
     } 
 }
 
-void print_result(solution_t* solution) 
+void print_solution(solution_t* solution) 
 {
-    switch (solution->type)
-    {
-        case 0:
-            printf("No solution\n"); 
+    //жопа
+    switch (solution->num_of_roots)
+    { //это временно 
+        case zero_roots:
+            printf("No solution %lf %lf\n", solution->x1, solution->x2); 
             break;
 
-        case 1:
-            printf("Solution: %lf\n", solution->x1);
+        case one_root:
+            printf("Solution: %lf %lf\n", solution->x1, solution->x2);
             break;
 
-        case 2:
+        case two_roots:
             printf("%s %lf %lf", "Solutions:\n", solution->x1, solution->x2); //fix printf
             break;
 
-        case 3:
-            printf("Solution is any number\n");
+        case infinity_roots:
+            printf("Solution is any number %lf %lf\n", solution->x1, solution->x2);
             break;
 
         default:
-            printf("error in type. Current type: %d\n", solution->type);  
+            printf("error in number of roots. Current number of roots: %d\n", solution->num_of_roots);
 
     }
 }
