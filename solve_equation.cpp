@@ -7,24 +7,22 @@ void solve_linear_equation(const equation_t* equation, solution_t* solution)
     assert(equation != nullptr);
     assert(solution != nullptr); 
     assert(equation->a == 0);
-
     if (is_zero(equation->b)) 
-    {   
-        if (equation->c == 0) solution->num_of_roots = infinity_roots;
-        else solution->num_of_roots = zero_roots;
-    }
-    else 
-    {
-        solution->x1 = (-equation->c / equation->b);
-        solution->num_of_roots = one_root;
-    }
+{
+    if (equation->c == 0) solution->num_of_roots = infinity_roots;
+    else solution->num_of_roots = zero_roots;
+}
+else 
+{
+    solution->x1 = (-equation->c / equation->b);
+    solution->num_of_roots = one_root;
+}
 }
 
 void solve_quadratic_equation(const equation_t* equation, solution_t* solution) 
 {
     assert(equation != nullptr);
     assert(solution != nullptr);
-
     if (is_zero(equation->a))
     {    
         solve_linear_equation(equation, solution);

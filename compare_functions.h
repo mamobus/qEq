@@ -4,7 +4,6 @@
 #include <math.h>
 /**
  * @brief Minimal difference
- * 
  * Minimal difference in two numbers to register. Is constant
  */
 const double mindiff = 1e-8; // exponent
@@ -14,9 +13,8 @@ const double mindiff = 1e-8; // exponent
  * 
  * @param number_a 
  * @param number_b 
- * 
  * @return true if number_a and number_b have difference less then mindiff
- * @return false otherwise
+ * @return false if number_a and number_b have difference more then mindiff
  */
 bool are_equal(double number_a, double number_b);
 

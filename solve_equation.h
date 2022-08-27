@@ -31,9 +31,7 @@ struct solution_t
 
 /**
  * @brief Solves quadratic equation 
- * 
  * Solves quadratic equation, but only if it is mathematically possible
- * 
  * @param equation Condition structure, includes 3 coefficients: a, b, c of a*x^2 + b*x + c = 0 equation
  * @param solution Solution structure, includes roots and their count
  */
@@ -41,9 +39,7 @@ void solve_quadratic_equation(const equation_t* equation, solution_t* solution);
 
 /**
  * @brief Solves linear equation 
- * 
  * Solves linear equation, but only if it is mathematically possible
- * 
  * @param equation Condition structure, includes 3 coefficients: a, b, c of a*x^2 + b*x + c = 0 equation
  * @param solution Solution structure, includes roots and their count
  */
