@@ -7,4 +7,4 @@ to run single equation solver use main.exe
 
 to solve multiple equations use solve_equation
 
-
+    

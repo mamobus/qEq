@@ -1,5 +1,6 @@
 #ifndef IO_FUNCTIONS_H
 #define IO_FUNCTIONS_H
+
 #include "solve_equation.h"
 
 enum continue_param
@@ -24,6 +25,6 @@ continue_param input_equation_coefficients(equation_t* equation);
  * 
  * @param solution Structure structure, includes roots and their count 
  */
-void print_solution(solution_t* solution); 
+void print_solution(const solution_t* solution); 
 
 #endif //IO_FUNCTIONS_H

@@ -29,7 +29,7 @@ continue_param input_equation_coefficients(equation_t* equation)
     return CONTINUE;
 } 
 
-void print_solution(solution_t* solution) 
+void print_solution(const solution_t* solution) 
 {
     assert(solution != nullptr);
     switch (solution->num_of_roots)

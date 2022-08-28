@@ -14,5 +14,5 @@ int main()
     
     print_solution(&solution);
 
-    return 0; // должен быть СТРОГО!!!
+    return 0;
 }
