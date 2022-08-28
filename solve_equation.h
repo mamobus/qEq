@@ -7,7 +7,14 @@
  * @brief Enum variable, means number of roots 
  * 
  */
-enum num_of_roots_t {zero_roots, one_root, two_roots, infinity_roots, error_number_of_roots}; 
+enum num_of_roots_t 
+{
+    ZERO_ROOTS            = 0,
+    ONE_ROOT              = 1, 
+    TWO_ROOTS             = 2, 
+    INFINITY_ROOTS        = 888, 
+    ERROR_NUMBER_OF_ROOTS = 4    
+}; 
 
 /**
  * @brief Stores equation coefficients a, b, c
@@ -15,7 +22,9 @@ enum num_of_roots_t {zero_roots, one_root, two_roots, infinity_roots, error_numb
  */
 struct equation_t
 {
-    double a = NAN, b = NAN, c = NAN;
+    double a = NAN;
+    double b = NAN;
+    double c = NAN;
 };
 
 /**
@@ -24,9 +33,9 @@ struct equation_t
  */
 struct solution_t
 {
-    double x1 = NAN, x2 = NAN;
-//    int type = -1;
-    num_of_roots_t num_of_roots = error_number_of_roots; 
+    double x1 = NAN; 
+    double x2 = NAN;
+    num_of_roots_t num_of_roots = ERROR_NUMBER_OF_ROOTS; 
 };
 
 /**

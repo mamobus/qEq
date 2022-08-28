@@ -7,7 +7,7 @@
  * 
  * Minimal difference in two numbers to register. Is constant
  */
-const double mindiff = 1e-8; // exponent
+const double MIN_DIFF = 1e-8; // exponent
 
 /**
  * @brief Compares two numbers
@@ -18,7 +18,7 @@ const double mindiff = 1e-8; // exponent
  * @return true if number_a and number_b have difference less then mindiff
  * @return false otherwise
  */
-bool are_equal(const double number_a,const double number_b);
+bool are_equal(const double number_a, const double number_b);
 
 /**
  * @brief 
@@ -27,7 +27,7 @@ bool are_equal(const double number_a,const double number_b);
  * @return true  if number and zero have difference less then mindiff
  * @return false otherwise
  */
-bool is_zero(double number);
+bool is_zero(const double number);
 
 /**
  * @brief Compares two nums

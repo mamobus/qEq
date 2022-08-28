@@ -6,12 +6,13 @@
 int main() 
 {
     equation_t equation = {};
-    input_equation_coefficients(&equation);
-    
+    if (input_equation_coefficients(&equation) == EXIT)
+        return 0;
+
     solution_t solution = {};
     solve_quadratic_equation(&equation, &solution);
     
     print_solution(&solution);
-    
+
     return 0; // должен быть СТРОГО!!!
 }

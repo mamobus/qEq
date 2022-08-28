@@ -2,6 +2,12 @@
 #define IO_FUNCTIONS_H
 #include "solve_equation.h"
 
+enum continue_param
+{
+    EXIT     = 0,
+    CONTINUE = 1,
+};
+
 /**
  * @brief Input function
  * 
@@ -9,7 +15,7 @@
  * 
  * @param equation Structure, that includes that coefficients
  */
-void input_equation_coefficients(equation_t* equation);
+continue_param input_equation_coefficients(equation_t* equation);
 
 /**
  * @brief Prints solution
